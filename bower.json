@@ -1,0 +1,18 @@
+{
+  "name": "Really",
+  "version": "1.0.0",
+  "homepage": "https://github.com/hristoborisov/Really",
+  "authors": [
+    "raxevsky <raxevsky@gmail.com>"
+  ],
+  "description": "The fastest way to share short-timed videos",
+  "main": "scripts/main.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
