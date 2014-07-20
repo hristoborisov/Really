@@ -1,24 +1,17 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-    <meta charset="utf-8" />
-    <link href="lib/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+<html ng-app="Really">
+  <head>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src='bower_components/firebase-simple-login/firebase-simple-login.js'></script>
 
-    <script src="cordova.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
-    <script src="//cdn.firebase.com/js/client/1.0.6/firebase.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/services.js"></script>
 
-    <script src="scripts/app.js"> </script>
-    <script src="scripts/controllers/reallyController.js"> </script>
-
-</head>
-<body>	
-	<div id="content" ng-app="ReallyApp" ng-controller="ReallyController">
-		<select ng-model="selectedPerson" ng-options="obj.name for obj in people"></select>
-		<select ng-model="selectedGenre">
-			<option ng-repeat="label in selectedPerson.music">{{label}}</option>
-		</select>
-	</div>
-</body>
+  </head>
+  <body>
+	   <div ng-view></div>
+  </body>
 </html>
