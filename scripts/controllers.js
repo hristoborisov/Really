@@ -1,6 +1,5 @@
-angular.module("Really.controllers",[]).
-	controller("ChatController", ["$scope", "ChatService",
-    function($scope, service) {
+angular.module("Really.controllers",[])
+.controller("ChatController", ["$scope", "ChatService", function($scope, service) {
       $scope.user = "Guest " + Math.round(Math.random()*101);
       $scope.messages = service.getMessages();
       $scope.addMessage = function() {
@@ -8,19 +7,16 @@ angular.module("Really.controllers",[]).
         $scope.message = "";
       };
     }
-  ]).
-  controller("AuthController",["$scope", "AuthService", "$route", "$routeParams","$location",function ($scope, service, $route, $routeParams, $location)
+  ])
+.controller("AuthController",["$scope", "AuthService",function ($scope, service)
 	{
-		console.log($route);
-		$scope.$on('$routeChangeSuccess', function(error) { console.log(error);})
+		$scope.loginData = { };
 
-		$scope.email = null;
-		$scope.password = null;
 		$scope.createUser = function(){
-			service.createUser($scope.email, $scope.password);
+		  	service.createUser($scope.loginData.email, $scope.loginData.password);
 		}
+    $scope.loginUser = function(){
+        service.loginUser($scope.loginData.email, $scope.loginData.password);
+    }
 	}
 ]);
-
-
-

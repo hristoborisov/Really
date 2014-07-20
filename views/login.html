@@ -1,1 +1,21 @@
-Login View
+<ion-view title="Welcome to Really" hide-back-button="true">
+  <ion-content has-header="true" padding="true">
+    <form ng-submit="loginUser()">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="Email" ng-model="loginData.email">
+        </label>
+        <label class="item item-input">
+          <input type="password" placeholder="Password" ng-model="loginData.password">
+        </label>
+  
+        <div>
+          <button class="button button-block button-positive" type="submit">Login</button>
+        </div>
+        <div style="text-align: center">
+          Or <a ui-sref="register" >Create an account</a>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

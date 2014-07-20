@@ -1,5 +1,5 @@
-angular.module("Really.services", []).
-  factory("ChatService", function() {
+angular.module("Really.services", [])
+.factory("ChatService", function() {
     var ref = new Firebase("https://really.firebaseio.com/chat");
     return {
       getMessages: function() {
@@ -13,9 +13,8 @@ angular.module("Really.services", []).
         ref.push(message);
       }
     }
-  }).
-
-  factory("AuthService", function(){
+  })
+.factory("AuthService", function(){
     var reallyRef = new Firebase("https://really.firebaseio.com");
     var auth = new FirebaseSimpleLogin(reallyRef, function(error,user){
       if(error){
@@ -31,15 +30,10 @@ angular.module("Really.services", []).
           }
         });
       },
-
       loginUser: function(email, password){
-        auth.loginUser(email,password, function(error,user){
-          if(error)
-            
-          {
-            console.log(error);
-          } 
-        });
-      }
+        auth.login('password',{
+                          email: email, 
+                          password: password});
+      } 
     }
-})
+});
